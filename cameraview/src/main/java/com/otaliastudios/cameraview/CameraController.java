@@ -40,6 +40,7 @@ abstract class CameraController implements
     protected WhiteBalance mWhiteBalance;
     protected VideoQuality mVideoQuality;
     protected VideoCodec mVideoCodec;
+    protected int mVideoEncodingBitRate;
     protected SessionType mSessionType;
     protected Hdr mHdr;
     protected Location mLocation;
@@ -288,6 +289,10 @@ abstract class CameraController implements
 
     final void setVideoCodec(VideoCodec codec) {
         mVideoCodec = codec;
+    }
+
+    final void setVideoCodecBitrate(int bitrate){
+        mVideoEncodingBitRate = bitrate;
     }
 
 

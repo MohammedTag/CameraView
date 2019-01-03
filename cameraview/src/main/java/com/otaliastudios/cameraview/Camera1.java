@@ -705,8 +705,9 @@ class Camera1 extends CameraController implements Camera.PreviewCallback, Camera
             mMediaRecorder.setVideoEncoder(profile.videoCodec);
         } else {
             mMediaRecorder.setVideoEncoder(mMapper.map(mVideoCodec));
+
         }
-        mMediaRecorder.setVideoEncodingBitRate(profile.videoBitRate);
+        mMediaRecorder.setVideoEncodingBitRate(mVideoEncodingBitRate);
         if (mAudio == Audio.ON) {
             mMediaRecorder.setAudioChannels(profile.audioChannels);
             mMediaRecorder.setAudioSamplingRate(profile.audioSampleRate);

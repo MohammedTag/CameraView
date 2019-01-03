@@ -567,6 +567,8 @@ public class CameraViewTest extends BaseTest {
         assertEquals(cameraView.getVideoCodec(), VideoCodec.H_263);
         cameraView.set(VideoCodec.H_264);
         assertEquals(cameraView.getVideoCodec(), VideoCodec.H_264);
+        cameraView.set(VideoCodec.H_265);
+        assertEquals(cameraView.getVideoCodec(),VideoCodec.H_265);
     }
 
     @Test

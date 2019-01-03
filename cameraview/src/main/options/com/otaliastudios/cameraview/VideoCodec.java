@@ -23,7 +23,12 @@ public enum VideoCodec implements Control {
     /**
      * The H.264 codec.
      */
-    H_264(2);
+    H_264(2),
+
+    /**
+     * The H.265 codec.
+     */
+    H_265(5);
 
     static final VideoCodec DEFAULT = DEVICE_DEFAULT;
 

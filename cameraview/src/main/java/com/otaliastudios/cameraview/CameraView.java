@@ -114,6 +114,7 @@ public class CameraView extends FrameLayout implements LifecycleObserver {
         Hdr hdr = Hdr.fromValue(a.getInteger(R.styleable.CameraView_cameraHdr, Hdr.DEFAULT.value()));
         Audio audio = Audio.fromValue(a.getInteger(R.styleable.CameraView_cameraAudio, Audio.DEFAULT.value()));
         VideoCodec codec = VideoCodec.fromValue(a.getInteger(R.styleable.CameraView_cameraVideoCodec, VideoCodec.DEFAULT.value()));
+        int videoEncodingBitRate = a.getInteger(R.styleable.CameraView_cameraVideoMaxDuration, 0);
         long videoMaxSize = (long) a.getFloat(R.styleable.CameraView_cameraVideoMaxSize, 0);
         int videoMaxDuration = a.getInteger(R.styleable.CameraView_cameraVideoMaxDuration, 0);
 
@@ -189,6 +190,7 @@ public class CameraView extends FrameLayout implements LifecycleObserver {
         setAudio(audio);
         setPictureSize(selector);
         setVideoCodec(codec);
+        setVideoCodecBitrate(videoEncodingBitRate);
         setVideoMaxSize(videoMaxSize);
         setVideoMaxDuration(videoMaxDuration);
 
@@ -1407,11 +1409,16 @@ public class CameraView extends FrameLayout implements LifecycleObserver {
      * @see VideoCodec#DEVICE_DEFAULT
      * @see VideoCodec#H_263
      * @see VideoCodec#H_264
+     * @see VideoCodec#H_265
      *
      * @param codec requested video codec
      */
     public void setVideoCodec(VideoCodec codec) {
         mCameraController.setVideoCodec(codec);
+    }
+
+    public  void setVideoCodecBitrate(int bitRate){
+        mCameraController.setVideoCodecBitrate(bitRate);
     }
 
 

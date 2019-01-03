@@ -22,9 +22,12 @@ abstract class Mapper {
             case DEVICE_DEFAULT: return MediaRecorder.VideoEncoder.DEFAULT;
             case H_263: return MediaRecorder.VideoEncoder.H263;
             case H_264: return MediaRecorder.VideoEncoder.H264;
+            case H_265: return MediaRecorder.VideoEncoder.HEVC;
             default: return MediaRecorder.VideoEncoder.DEFAULT;
         }
     }
+
+
 
 
     static class Mapper1 extends Mapper {
@@ -58,6 +61,7 @@ abstract class Mapper {
         <T> T map(Flash flash) {
             return (T) FLASH.get(flash);
         }
+
 
         @Override
         <T> T map(Facing facing) {
